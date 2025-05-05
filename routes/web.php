@@ -12,6 +12,11 @@ Route::post('/contact', [ContactController::class, 'store']);
 Route::get('/', function () {
     return view('welcome');
 });
+use App\Http\Controllers\AdminController;
+
+Route::get('/admin', [AdminController::class, 'create'])->name('admin.create');
+Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
+
 
 Route::get('/', [ProductController::class, 'index'])->name('product.index');
 
